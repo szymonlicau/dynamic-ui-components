@@ -1,9 +1,12 @@
 :root {
   --white-color: #fff;
+  --gray-color: #dfdfdf;
   --primary-color: #41b883;
   --secondary-color: #34495e;
   --text-color: #2d2d2d;
   --border-color: #eaeaea;
 
   --generic-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.2);
+
+  --z-context-menu: 10000;
 }

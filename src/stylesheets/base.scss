@@ -12,6 +12,10 @@ body {
   color: var(--text-color);
 }
 
+hr {
+  color: var(--border-color);
+}
+
 *,
 *::before,
 *::after {

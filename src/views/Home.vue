@@ -16,17 +16,17 @@
 </template>
 
 <script setup lang="ts">
-const tabs = [ 'ContextMenu', 'GridSystem' ];
+const tabs = [ 'ContextMenu', 'DynamicTable', 'GridSystem' ];
 </script>
 
 <style lang="scss">
 .tabs {
-  --border-width: 0.2rem;
-
   display: flex;
   align-items: center;
-  border-bottom: var(--border-width) solid var(--border-color);
+  border-bottom: 0.2rem solid var(--border-color);
   margin-bottom: 2rem;
+  overflow-y: hidden;
+  overflow-x: auto;
 }
 
 .tab {
@@ -36,10 +36,9 @@ const tabs = [ 'ContextMenu', 'GridSystem' ];
   text-decoration: none;
   color: var(--text-color);
   font-size: 1.8rem;
-  border-bottom: 0.4rem solid var(--indicator-color);
+  border-bottom: 0.2rem solid var(--indicator-color);
   transition: all 0.1s linear;
   padding: 0.4rem 0.8rem;
-  margin-bottom: calc(-1 * var(--border-width));
 
   &:hover,
   &.router-link-exact-active {

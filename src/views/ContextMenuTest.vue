@@ -5,6 +5,8 @@
   >
     <p>
       Right click on me to test the context menu~!
+      <br/>
+      (on mobile devices just do a long press)
     </p>
 
     <p>
@@ -25,6 +27,8 @@
     v-show="contextMenuShown"
     :x="mouseX"
     :y="mouseY"
+    :options="options"
+    @option="onOptionClick"
     @close="hideContextMenu"
   />
 </template>
@@ -46,6 +50,10 @@ const openContextMenu = (event: MouseEvent) => {
 };
 
 const hideContextMenu = () => contextMenuShown.value = false;
+
+const options = [ 'Option 1', 'Option 2', 'Option 3' ];
+
+const onOptionClick = (option: string) => console.log(`Selected: ${option}`);
 </script>
 
 <style lang="scss">

@@ -17,11 +17,15 @@ const router = createRouter({
           component: () => import('@/views/ContextMenuTest.vue'),
           name: 'ContextMenu'
         },
-
         {
           path: 'grid',
           component: () => import('@/views/GridSystemTest.vue'),
           name: 'GridSystem'
+        },
+        {
+          path: 'table',
+          component: () => import('@/views/DynamicTableTest.vue'),
+          name: 'DynamicTable'
         }
       ]
     }

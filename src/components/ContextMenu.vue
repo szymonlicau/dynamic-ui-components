@@ -27,21 +27,20 @@ import { onClickOutside } from '@vueuse/core';
 defineProps<{
   x: number;
   y: number;
+  options: string[];
 }>();
 
 const emit = defineEmits<{
   (e: 'close'): void;
+  (e: 'option', option: string): void;
 }>();
 
 const contextMenuRef = ref(null);
 
 onClickOutside(contextMenuRef, () => emit('close'));
 
-const options = [ 'Option 1', 'Option 2', 'Option 3' ];
-
 const onOptionClick = (option: string) => {
-  console.log(`Clicked on ${option}`);
-
+  emit('option', option);
   emit('close');
 };
 </script>
@@ -56,12 +55,18 @@ const onOptionClick = (option: string) => {
   left: 0;
   right: 0;
   width: 100%;
+  z-index: var(--z-context-menu);
+  max-height: 75vh;
+  overflow: auto;
 
   @include breakpoint-desktop {
     border-radius: 0.4rem;
     max-width: 12rem;
+    max-height: 20rem;
     bottom: auto;
     right: auto;
+    // Because we are operating on straight up numbers, convert those to pixels
+    // We could also introduce computed properties to get string values like '100px'
     top: calc(v-bind(y) * 1px);
     left: calc(v-bind(x) * 1px);
   }
