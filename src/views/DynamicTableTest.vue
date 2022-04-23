@@ -39,16 +39,16 @@ import { computed, ref } from 'vue';
 
 import employees from '@/mocks/employees';
 
-import DynamicTable from '@/components/DynamicTable.vue';
+import DynamicTable, { Column, ColumnSize } from '@/components/DynamicTable.vue';
 
-const columns = computed(() => {
+const columns = computed<Column[]>(() => {
   const firstEmployee = employees[0];
 
   return Object.keys(firstEmployee).map((column) => {
     // Titleize the field names
     const result = column.replace(/([A-Z])/g, " $1");
 
-    let size = 'normal';
+    let size: ColumnSize = 'normal';
 
     if (column === 'id') {
       size = 'small';

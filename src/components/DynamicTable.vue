@@ -33,16 +33,20 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import { computed } from 'vue';
+<script lang="ts">
+export type ColumnSize = 'big' | 'normal' | 'small';
 
-type ColumnSize = 'big' | 'normal' | 'small';
-
-type Column = {
+export type Column = {
   key: string;
   name: string;
   size?: ColumnSize;
 }
+
+export default { };
+</script>
+
+<script setup lang="ts">
+import { computed } from 'vue';
 
 const sizeMap: Record<ColumnSize, string> = {
   big: 'minmax(25rem, 5fr)',
