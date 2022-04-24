@@ -241,7 +241,7 @@
           <div class="filler">
             Mobile - auto
             <br/>
-            Tablet - 6 / {{ numberOfColumns }}
+            Tablet - 9 / {{ numberOfColumns }}
             <br/>
             Desktop - 4 / {{ numberOfColumns }}
           </div>
@@ -254,7 +254,7 @@
           <div class="filler">
             Mobile - auto
             <br/>
-            Tablet - 6 / {{ numberOfColumns }}
+            Tablet - 3 / {{ numberOfColumns }}
             <br/>
             Desktop - 8 / {{ numberOfColumns }}
           </div>
