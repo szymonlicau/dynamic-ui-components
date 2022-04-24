@@ -97,6 +97,7 @@ const columnsTemplate = computed(() => {
   &__header,
   &__data,
   &__row {
+    // Bypass the display for easier CSS grid use
     @include breakpoint-tablet {
       display: contents;
     }
@@ -149,6 +150,7 @@ const columnsTemplate = computed(() => {
       content: ':'
     }
 
+    // Labels only visible on mobile
     @include breakpoint-tablet {
       display: none;
     }

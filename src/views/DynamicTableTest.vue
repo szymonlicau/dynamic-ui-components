@@ -41,26 +41,31 @@ import employees from '@/mocks/employees';
 
 import DynamicTable, { Column, ColumnSize } from '@/components/DynamicTable.vue';
 
+// Column definitions according to DynamicTable component's requirements
 const columns = computed<Column[]>(() => {
   const firstEmployee = employees[0];
 
   return Object.keys(firstEmployee).map((column) => {
     // Titleize the field names
-    const result = column.replace(/([A-Z])/g, " $1");
+    const columnName = column.replace(/([A-Z])/g, " $1");
+    const titleizedName = columnName.charAt(0).toUpperCase() + columnName.slice(1);
 
+    // By default let's use normal column sizes
     let size: ColumnSize = 'normal';
 
+    // Make ID column a narrow one
     if (column === 'id') {
       size = 'small';
     }
 
+    // But make addresses bigger
     if (column === 'streetAddress') {
       size = 'big';
     }
 
     return {
       key: column,
-      name: result.charAt(0).toUpperCase() + result.slice(1),
+      name: titleizedName,
       size
     };
   });

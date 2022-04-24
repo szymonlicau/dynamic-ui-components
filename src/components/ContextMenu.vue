@@ -48,7 +48,6 @@ const onOptionClick = (option: string) => {
 <style lang="scss">
 .context-menu {
   position: fixed;
-  overflow: hidden;
   border-radius: 0.4rem 0.4rem 0 0;
   box-shadow: var(--generic-shadow);
   bottom: 0;

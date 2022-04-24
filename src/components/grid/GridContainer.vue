@@ -23,6 +23,7 @@ const gridGutter = computed(() => `${props.gutter}px`);
   // Set up gutter on -explicitly- named property
   // thanks to which we can use it easily in child components with ease
   // because of cascading nature of CSS
+  // (v-bind would make the names unpredictable)
   --grid-gutter: v-bind(gridGutter);
   --max-columns: v-bind(columns);
 

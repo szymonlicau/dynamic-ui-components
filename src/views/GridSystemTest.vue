@@ -232,6 +232,34 @@
           </div>
         </GridColumn>
       </GridRow>
+
+      <GridRow>
+        <GridColumn
+          :size-tablet="9"
+          :size-desktop="4"
+        >
+          <div class="filler">
+            Mobile - auto
+            <br/>
+            Tablet - 6 / {{ numberOfColumns }}
+            <br/>
+            Desktop - 4 / {{ numberOfColumns }}
+          </div>
+        </GridColumn>
+
+        <GridColumn
+          :size-tablet="3"
+          :size-desktop="8"
+        >
+          <div class="filler">
+            Mobile - auto
+            <br/>
+            Tablet - 6 / {{ numberOfColumns }}
+            <br/>
+            Desktop - 8 / {{ numberOfColumns }}
+          </div>
+        </GridColumn>
+      </GridRow>
     </GridContainer>
   </section>
 </template>
