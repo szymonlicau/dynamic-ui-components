@@ -4,14 +4,6 @@
   </div>
 </template>
 
-<script setup lang="ts">
-withDefaults(defineProps<{
-  noGutters?: boolean;
-}>(), {
-  noGutters: false,
-});
-</script>
-
 <style lang="scss">
 .grid-row {
   // Use the grid gutter, if it's not there - fallback to 0
